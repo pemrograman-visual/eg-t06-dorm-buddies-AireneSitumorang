@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Airene Situmorang"/>
+        <attribute name="authors" value="T06"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-12-04 04:23:41 PM"/>
+        <attribute name="created" value="TGVub3ZvO0RFU0tUT1AtNExSTTBOSzsyMDIzLTExLTE2OzEwOjE3OjQ2IEFNOzI5NjI="/>
+        <attribute name="edited" value="TGVub3ZvO0RFU0tUT1AtNExSTTBOSzsyMDIzLTEyLTE1OzAyOjEzOjE0IFBNOzY7MzA4Mg=="/>
+        <attribute name="edited" value="aHA7TEFQVE9QLVVSVDZGN0xFOzIwMjQtMTItMDQ7MDQ6MjM6NDEgUE07MTsyNjgx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Name" type="String" array="True" size="4"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <call expression="Initialized(Name,i)"/>
+            <call expression="Input(Name)"/>
+            <call expression="Output(Name)"/>
+        </body>
+    </function>
+    <function name="Initialized" type="None" variable="Initialized">
+        <parameters>
+            <parameter name="Name" type="String" array="True"/>
+            <parameter name="i" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Initialized" type="String" array="False" size=""/>
+            <for variable="i" start="0" end="3" direction="inc" step="1">
+                <assign variable="Name[i]" expression="&quot;&quot;"/>
+            </for>
+        </body>
+    </function>
+    <function name="Input" type="None" variable="Input">
+        <parameters>
+            <parameter name="Name" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="Input" type="String" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="3" direction="inc" step="1">
+                <input variable="Name[i]"/>
+                <if expression="Name[i] = &quot;---&quot;">
+                    <then>
+                        <assign variable="i" expression="9"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="Output" type="None" variable="Output">
+        <parameters>
+            <parameter name="Name" type="String" array="True"/>
+        </parameters>
+        <body>
+            <declare name="Output" type="String" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="3" direction="inc" step="1">
+                <if expression="Name[i] = &quot;---&quot;">
+                    <then>
+                        <assign variable="i" expression="72"/>
+                    </then>
+                    <else>
+                        <output expression="Name[i]" newline="True"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
